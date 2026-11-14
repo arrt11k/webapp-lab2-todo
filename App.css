@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: #222;
+}
+.app {
+  max-width: 520px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+h1 { margin: 0 0 20px; text-align: center; }
+.add { display: flex; gap: 8px; }
+.add input {
+  flex: 1; padding: 10px 12px; font-size: 16px;
+  border: 2px solid #ddd; border-radius: 8px;
+}
+.add input:focus { outline: none; border-color: #667eea; }
+button {
+  cursor: pointer; border: none; border-radius: 8px;
+  padding: 10px 14px; font-size: 14px; background: #667eea; color: #fff;
+  transition: transform 0.1s, background 0.2s;
+}
+button:hover { background: #5568d3; }
+button:active { transform: scale(0.96); }
+.progress { height: 8px; background: #eee; border-radius: 4px; margin-top: 18px; overflow: hidden; }
+.bar { height: 100%; background: #4caf50; transition: width 0.4s ease; }
+.stats { font-size: 13px; color: #666; margin: 6px 0 14px; }
+.filters { display: flex; gap: 6px; margin-bottom: 12px; }
+.filters button { background: #eee; color: #333; flex: 1; }
+.filters button.active { background: #667eea; color: #fff; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 4px; border-bottom: 1px solid #eee;
+  animation: slideIn 0.3s ease;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.list li.removing { opacity: 0; transform: translateX(40px); }
+.list label { display: flex; align-items: center; gap: 10px; flex: 1; cursor: pointer; }
+.list li.done span { text-decoration: line-through; color: #999; }
+.delete { background: transparent; color: #d33; padding: 4px 8px; }
+.delete:hover { background: #fdd; }
+.empty { text-align: center; color: #999; }
+.clear { margin-top: 14px; width: 100%; background: #e57373; }
+.clear:hover { background: #d35d5d; }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
